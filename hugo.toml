@@ -1,6 +1,6 @@
 baseURL = "https://mynewhugosite.com"
 title = "My New Hugo Site"
-theme = "hugo-optom-code-theme"
+theme = "optom-code"
 
 [menu]
 [[menu.main]]
