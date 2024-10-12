@@ -1,1 +1,3 @@
-# Hugo Optom Code Theme (WIP)
+# Optom Code (WIP)
+
+A theme for [Hugo](https://gohugo.io/)
