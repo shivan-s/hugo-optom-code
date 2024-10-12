@@ -1,0 +1,84 @@
+:root {
+  --primary-color: #196680;
+  --secondary-color: #80dfff;
+  --alternative-color: #ff9b33;
+  --text-color: #222222;
+}
+
+a {
+  color: var(--primary-color);
+}
+
+.dark a {
+  color: var(--secondary-color);
+}
+
+a:hover {
+  color: var(--alternative-color);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--primary-color);
+}
+
+.dark h1,
+.dark h2,
+.dark h3 {
+  color: var(--secondary-color);
+}
+
+.dark .pagination a {
+  color: var(--primary-color);
+}
+
+body {
+  color: #222;
+  font-family:
+    Monaspace Argon,
+    sans-serif;
+  line-height: 1.5;
+  margin: 1rem;
+  max-width: 768px;
+}
+
+header {
+  border-bottom: 1px solid #222;
+  margin-bottom: 1rem;
+}
+
+footer {
+  border-top: 1px solid #222;
+  margin-top: 1rem;
+}
+
+a {
+  color: #00e;
+  text-decoration: none;
+}
+
+h1 {
+  font-family:
+    Optician Sans,
+    sans-serif;
+}
+
+@font-face {
+  font-family: "Optician Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Optiker-K.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Monaspace Radon";
+  font-style: normal;
+  src: url("/fonts/MonaspaceRadon-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Monaspace Argon";
+  font-style: normal;
+  src: url("/fonts/MonaspaceArgon-Medium.woff") format("woff");
+}
