@@ -1,9 +1,14 @@
-{{ define "main" }}
-<section class="info">{{ .Content }}</section>
+{{ define "main" }} {{ with .GetPage "About" }}
+<section class="info">
+  <h2>Quick Intro</h2>
+  {{ truncate 100 .Content }}
+  <a class="more" href="{{ .RelPermalink }}">Read more...</a>
+</section>
+{{ end }}
 <section>
-  <h2>Recent Posts</h2>
-  {{ range site.RegularPages }}
-  <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
+  <h2>Posts</h2>
+  {{ range where site.Pages "Section" "posts" }}
+  <h3><a href=" {{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
   {{ .Summary }} {{ end }}
 </section>
 {{ end }}

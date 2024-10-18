@@ -14,14 +14,14 @@ params:
 
 menus:
   main:
-    - name: Home
-      pageRef: /
+    - name: About
+      pageRef: /about
       weight: 10
     - name: Posts
       pageRef: /posts
       weight: 20
-    - name: Tags
-      pageRef: /tags
+    - name: Projects
+      pageRef: /projects
       weight: 30
 
 module:
