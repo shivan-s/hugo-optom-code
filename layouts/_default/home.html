@@ -1,7 +1,14 @@
-{{ define "main" }}
-  {{ .Content }}
-  {{ range site.RegularPages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
-  {{ end }}
+{{ define "main" }} {{ with .GetPage "About" }}
+<section class="info">
+  <h2>Quick Intro</h2>
+  {{ truncate 100 .Content }}
+  <a class="more" href="{{ .RelPermalink }}">Read more...</a>
+</section>
+{{ end }}
+<section>
+  <h2>Posts</h2>
+  {{ range where site.Pages "Section" "posts" }}
+  <h3><a href=" {{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
+  {{ .Summary }} {{ end }}
+</section>
 {{ end }}

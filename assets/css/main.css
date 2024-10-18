@@ -1,20 +1,104 @@
 :root {
+  /* Colors */
   --primary-color: #196680;
   --secondary-color: #80dfff;
   --alternative-color: #ff9b33;
   --text-color: #222222;
+
+  /* Spacing */
+  --small-gap: 0.5rem;
+  --gap: 1rem;
+  --variable-gap: calc(8px + 1.5625vw);
+}
+
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+h1,
+h2 {
+  font-family:
+    Optician Sans,
+    sans-serif;
+}
+
+header,
+footer {
+  font-family:
+    Optician Sans,
+    sans-serif;
+}
+
+header nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header nav a {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+header nav ul:hover a:not(:hover) {
+  opacity: 0.8;
+  filter: blur(1px);
+}
+
+header nav ul a:hover {
+  outline: 2px ridge var(--text-color);
+  filter: none;
+  border-radius: 4rem;
+  box-shadow: 0 0 0 2pt var(--text-color);
+}
+
+header nav ul li a {
+  padding: 0.5rem 1rem;
+}
+
+header nav ul li {
+  list-style: none;
+}
+
+[aria-current="page"] {
+  outline: 2px ridge var(--text-color);
+  filter: none;
+  border-radius: 4rem;
+  box-shadow: 0 0 0 2pt var(--text-color);
+}
+
+section {
+  border-radius: 1rem;
+  padding: 0rem calc(var(--gap) / 2);
+}
+
+section.info {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 1px black;
+  border: 1px solid var(--text-color);
+}
+
+section.info a.more {
+  align-self: end;
+  padding: 1rem;
 }
 
 a {
   color: var(--primary-color);
-}
-
-.dark a {
-  color: var(--secondary-color);
+  text-decoration: underline dotted;
 }
 
 a:hover {
   color: var(--alternative-color);
+  text-decoration: underline solid;
 }
 
 h1,
@@ -23,45 +107,45 @@ h3 {
   color: var(--primary-color);
 }
 
-.dark h1,
-.dark h2,
-.dark h3 {
-  color: var(--secondary-color);
-}
-
-.dark .pagination a {
-  color: var(--primary-color);
-}
-
 body {
-  color: #222;
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  width: 100dvw;
+  min-height: 100dvh;
+  color: var(--text-color);
   font-family:
     Monaspace Argon,
     sans-serif;
-  line-height: 1.5;
-  margin: 1rem;
-  max-width: 768px;
 }
 
-header {
-  border-bottom: 1px solid #222;
-  margin-bottom: 1rem;
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-gap);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--variable-gap);
+  width: 100%;
+  max-width: calc(75ch + var(--variable-gap));
+  flex-grow: 1;
 }
 
 footer {
-  border-top: 1px solid #222;
-  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap);
 }
 
-a {
-  color: #00e;
-  text-decoration: none;
+ul#breadcrumbs {
+  list-style: none;
+  display: flex;
+  gap: 1ch;
 }
 
-h1 {
-  font-family:
-    Optician Sans,
-    sans-serif;
+ul#breadcrumbs>li:not(:last-child)::after {
+  content: " /";
 }
 
 @font-face {
@@ -80,5 +164,5 @@ h1 {
 @font-face {
   font-family: "Monaspace Argon";
   font-style: normal;
-  src: url("/fonts/MonaspaceArgon-Medium.woff") format("woff");
+  src: url("/fonts/MonaspaceArgon-Regular.woff") format("woff");
 }

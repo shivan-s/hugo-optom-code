@@ -1,0 +1,21 @@
+---
+name: "Optom Code"
+license: "MIT"
+licenselink: "https://github.com/shivan/hugo-optom-code/LICENSE"
+description: "A theme for optometrists who code"
+homepage: "https://github.com/shivan-s/hugo-optom-code"
+
+# If you have a running demo of the theme
+# TODO!
+demosite: "https://owner.github.io/repo"
+
+# Taxonomy terms
+tags:
+  - blog
+  - company
+
+features:
+
+author:
+  name: "Shivan Sivakumaran"
+  homepage: "https://shivan.xyz"

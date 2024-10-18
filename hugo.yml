@@ -1,0 +1,30 @@
+---
+baseURL: https://example.org/
+languageCode: en-US
+title: My New Hugo Site
+
+params:
+  author:
+    email: author@email.com
+    name: Author name
+  welcome:
+    title: Welcome
+    body: Stuff in here
+    image: image.webp
+
+menus:
+  main:
+    - name: About
+      pageRef: /about
+      weight: 10
+    - name: Posts
+      pageRef: /posts
+      weight: 20
+    - name: Projects
+      pageRef: /projects
+      weight: 30
+
+module:
+  hugoVersion:
+    extended: false
+    min: "0.116.0"
