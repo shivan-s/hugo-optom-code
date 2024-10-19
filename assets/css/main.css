@@ -1,18 +1,51 @@
+/* Reset Styling */
+p,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global Styling */
 :root {
   /* Colors */
   --primary-color: #196680;
   --secondary-color: #80dfff;
   --alternative-color: #ff9b33;
   --text-color: #222222;
-
-  /* Spacing */
-  --small-gap: 0.5rem;
-  --gap: 1rem;
+  --background-color: #fefefe
+    /* Spacing */
+    --small-gap: 0.5rem;
+  --normal-gap: 1rem;
+  --letter-gap: 1ch;
   --variable-gap: calc(8px + 1.5625vw);
+
+  /* Font Size */
+  --small-size: 0.875rem;
+  --normal-size: 1rem;
+  --large-size: 1.25rem;
+  --larger-size: 1.5rem;
+  --very-large-size: 2.5rem;
+}
+
+p {
+  font-size: var(--normal-size);
 }
 
 * {
   transition: all 0.3s ease-in-out;
+}
+
+h1 {
+  font-family:
+    Optician Sans,
+    sans-serif;
+  font-size: var(--very-large-size);
 }
 
 h1,
@@ -30,18 +63,15 @@ footer {
 }
 
 header nav {
+  padding: 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-header nav a {
-  display: flex;
-  flex-grow: 1;
-  justify-content: center;
-}
-
 header nav ul {
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -64,6 +94,7 @@ header nav ul li a {
 }
 
 header nav ul li {
+  padding: 0.5rem 1rem;
   list-style: none;
 }
 
@@ -71,19 +102,18 @@ header nav ul li {
   outline: 2px ridge var(--text-color);
   filter: none;
   border-radius: 4rem;
-  box-shadow: 0 0 0 2pt var(--text-color);
 }
 
 section {
-  border-radius: 1rem;
-  padding: 0rem calc(var(--gap) / 2);
+  border-radius: 0.25rem;
+  padding: 0rem calc(var(--normal-gap) / 2);
 }
 
 section.info {
   display: flex;
   flex-direction: column;
-  box-shadow: 1px 1px 1px black;
   border: 1px solid var(--text-color);
+  box-shadow: 1px 1px 1px 1px var(--text-color);
 }
 
 section.info a.more {
@@ -114,6 +144,7 @@ body {
   width: 100dvw;
   min-height: 100dvh;
   color: var(--text-color);
+  background-color: var(--background-color);
   font-family:
     Monaspace Argon,
     sans-serif;
@@ -131,21 +162,28 @@ main {
   flex-grow: 1;
 }
 
+/* footer */
 footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--gap);
 }
 
-ul#breadcrumbs {
+footer p:not(:last-child)::after {
+  padding: 0 var(--letter-gap);
+  content: "·";
+}
+
+/* breadcrumbs */
+ul.breadcrumbs {
+  font-size: var(--small-size);
   list-style: none;
   display: flex;
-  gap: 1ch;
 }
 
-ul#breadcrumbs>li:not(:last-child)::after {
-  content: " /";
+ul.breadcrumbs>li:not(:last-child)::after {
+  padding: 0 var(--letter-gap);
+  content: "/";
 }
 
 @font-face {
