@@ -7,10 +7,9 @@ params:
   author:
     email: author@email.com
     name: Author name
-  welcome:
-    title: Welcome
-    body: Stuff in here
+  about:
     image: image.webp
+  githubRepo: "http://github.com/shivan-s/hugo-optom-code"
 
 menus:
   main:
@@ -28,3 +27,8 @@ module:
   hugoVersion:
     extended: false
     min: "0.116.0"
+
+pagination:
+  disableAliases: false
+  pagerSize: 10
+  path: page
