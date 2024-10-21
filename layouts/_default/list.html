@@ -1,5 +1,7 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-{{ .Content }} {{ range .Pages }}
-<h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-{{ .Summary }} {{ end }} {{ end }}
+<header>
+  {{ partial "breadcrumbs.html" . }}
+  <h2>{{ .Title }}</h2>
+</header>
+{{ .Content }} {{ range .Pages }} {{ partial "article.html" . }} {{ .Summary }}
+{{ end }} {{ end }}
