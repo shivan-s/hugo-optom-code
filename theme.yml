@@ -6,8 +6,7 @@ description: "A theme for optometrists who code"
 homepage: "https://github.com/shivan-s/hugo-optom-code"
 
 # If you have a running demo of the theme
-# TODO!
-demosite: "https://owner.github.io/repo"
+demosite: "https://shivan.xyz"
 
 # Taxonomy terms
 tags:

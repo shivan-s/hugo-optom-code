@@ -3,5 +3,5 @@
   {{ partial "breadcrumbs.html" . }}
   <h2>{{ .Title }}</h2>
 </header>
-{{ .Content }} {{ range .Pages }} {{ partial "article.html" . }} {{ .Summary }}
-{{ end }} {{ end }}
+{{ range .Pages }} {{ partial "article-item.html" . }} {{ .Summary }} {{ end }}
+{{ end }}

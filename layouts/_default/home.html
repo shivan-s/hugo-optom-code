@@ -11,12 +11,13 @@
   </footer>
 </section>
 {{ end }}
-<section>
+<section class="posts">
   <header>
     <h2>Posts</h2>
   </header>
-  {{ $pages := where site.Pages "Section" "posts" }} {{ range $pages }} {{
-  partial "article.html" . }}
+  {{ $pages := where site.RegularPages "Type" "posts" }} {{ $paginator :=
+  .Paginate $pages }} {{ range $paginator.Pages }} {{ partial
+  "article-item.html" . }}
   <hr />
   {{ end }}
   <footer />

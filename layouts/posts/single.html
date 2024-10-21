@@ -1,0 +1,22 @@
+{{ define "main" }}
+</header>
+<article>
+  <header>
+    {{ partial "breadcrumbs.html" . }}
+    <h2>{{ .Title }}</h2>
+    <small class="post-metadata">
+      {{ partial "time.html" . }}
+      <span title="{{ .WordCount }} words">{{ .ReadingTime }} min</span>
+      <span>{{ .Params.author }}</span>
+      <span><a href="">Suggest Changes</a></span>
+    </small>
+  </header>
+  {{ with .Params.audio }}
+  {{ partials "audio.html" . }}
+  {{ end }} <div class="content">{{ .Content }}
+  </div>
+  <footer>
+    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+  </footer>
+</article>
+{{ end }}
