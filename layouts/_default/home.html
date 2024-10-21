@@ -1,14 +1,24 @@
 {{ define "main" }} {{ with .GetPage "About" }}
-<section class="info">
-  <h2>Quick Intro</h2>
-  {{ truncate 100 .Content }}
-  <a class="more" href="{{ .RelPermalink }}">Read more...</a>
+<section class="about">
+  <header>
+    <a href="{{ .RelPermalink }}">
+      <h2>About</h2>
+    </a>
+  </header>
+  <p>{{ truncate 128 .Content }}</p>
+  <footer>
+    <a href="{{ .RelPermalink }}">Read more...</a>
+  </footer>
 </section>
 {{ end }}
 <section>
-  <h2>Posts</h2>
-  {{ range where site.Pages "Section" "posts" }}
-  <h3><a href=" {{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
-  {{ .Summary }} {{ end }}
+  <header>
+    <h2>Posts</h2>
+  </header>
+  {{ $pages := where site.Pages "Section" "posts" }} {{ range $pages }} {{
+  partial "article.html" . }}
+  <hr />
+  {{ end }}
+  <footer />
 </section>
 {{ end }}
