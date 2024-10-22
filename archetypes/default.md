@@ -13,4 +13,7 @@ cover:
   relative: false
   hidden: false
 audio:
+  src: audio.mp3
+  caption: caption
+  hidden: true
 ---

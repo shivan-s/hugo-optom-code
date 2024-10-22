@@ -3,8 +3,7 @@ title: "My First Post"
 date: 2020-09-03
 author: Author Name
 summary: Summary
-categories: [""]
-tags: [""]
+tags: ["lorem", "epsum"]
 draft: true
 cover:
   image: image.jpg
@@ -15,6 +14,7 @@ cover:
 audio:
   file: audio.mp3
   caption: audio
+  hidden: true
 ---
 
 Here's an example blog post.
