@@ -1,4 +1,5 @@
 {{ define "main" }} {{ with .GetPage "About" }}
+<h1 hidden>{{ .Page.Title }}</h1>
 <section class="about">
   <header>
     <a href="{{ .RelPermalink }}">
@@ -11,13 +12,28 @@
   </footer>
 </section>
 {{ end }}
-<section>
+<section class="posts">
   <header>
     <h2>Posts</h2>
   </header>
-  {{ $pages := where site.Pages "Section" "posts" }} {{ range $pages }} {{
-  partial "article.html" . }}
-  <hr />
+  {{ $pages := where site.RegularPages "Type" "posts" }} {{ range
+  $pages.GroupByPublishDate "2006" }}
+  <div class="page-groupby">
+    <h3>{{ .Key }}</h3>
+    <ul>
+      {{ range .Pages }}
+      <li>
+        <a href="{{ .RelPermalink }}"><span class="post-title">{{ .LinkTitle }}</span>
+          <small class="post-metadata">
+            {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00"
+            }} {{ $dateHuman := .Date | time.Format "2 Jan" }}
+            <span><time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></span>
+            <span title="{{ .WordCount }} words">
+              {{ .ReadingTime }} min</span></small></a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
   {{ end }}
   <footer />
 </section>

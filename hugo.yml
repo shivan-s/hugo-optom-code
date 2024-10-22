@@ -9,7 +9,7 @@ params:
     name: Author name
   about:
     image: image.webp
-  githubRepo: "http://github.com/shivan-s/hugo-optom-code"
+  githubRepo: "http://github.com/shivan-s/shivan.xyz"
 
 menus:
   main:
@@ -32,3 +32,13 @@ pagination:
   disableAliases: false
   pagerSize: 10
   path: page
+
+markup:
+  highlight:
+    style: catppuccin-mocha
+
+enableGitInfo: true
+
+taxonomies:
+  category: categories
+  tag: tags

@@ -1,7 +1,26 @@
 {{ define "main" }}
 <header>
-  {{ partial "breadcrumbs.html" . }}
   <h2>{{ .Title }}</h2>
 </header>
-{{ .Content }} {{ range .Pages }} {{ partial "article.html" . }} {{ .Summary }}
+
+{{ range .Pages.GroupByPublishDate "2006" }}
+<div class="page-groupby">
+  <h3>{{ .Key }}</h3>
+  <ul>
+    {{ range .Pages }} {{ with .GetTerms "tags" }}
+    <p>Tags</p>
+    <ul>
+      {{ range . }}
+      <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+      {{ end }}
+    </ul>
+    {{ end }}
+    <li>
+      <a href="{{ .RelPermalink }}"><span>{{ .LinkTitle }}<span>{{ . }}</span></span>
+        <small class="post-metadata">{{ partial "time.html" . }}<span title="{{ .WordCount }} words">
+            {{ .ReadingTime }} min</span></small></a>
+    </li>
+    {{ end }}
+  </ul>
+</div>
 {{ end }} {{ end }}
