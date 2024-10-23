@@ -11,6 +11,9 @@
       <span>{{ .Params.author }}</span>
       <span><a href="{{ .Params.githubRepo }}">Suggest Changes</a></span>
     </small>
+    {{ with .TableOfContents }} {{ if . }}
+    <details>{{ . }}</details>
+    {{ end }} {{ end }}
   </header>
   <div class="content">{{ .Content }}</div>
   <footer>{{ partial "tags.html" (dict "taxonomy" "tags" "page" .) }}</footer>
