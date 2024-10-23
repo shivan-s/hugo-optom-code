@@ -16,7 +16,7 @@
   <header>
     <h2>Posts</h2>
     <span>{{ with .OutputFormats.Get "rss" -}}
-      <a title="RSS" href="{{ .Permalink }}">{{ readFile 'static/rss.svg' | safeHTML }}</a>
+      <a title="RSS" href="{{ .Permalink }}">{{ readFile "static/rss.svg" | safeHTML }}</a>
       {{ end }}
     </span>
   </header>
