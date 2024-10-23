@@ -192,24 +192,40 @@ section {
 }
 
 section.posts {
-  & .page-groupby:hover {
-    transform: rotate(1deg);
-  }
+  & .page-groupby {
+    width: 100%;
 
-  & .page-groupby:hover a:not(:hover) {
-    opacity: 0.8;
-    filter: blur(1px);
+    &:nth-child(odd) {
+      transform: rotate(-1deg);
+    }
+
+    &:nth-child(even) {
+      transform: rotate(1deg);
+    }
+
+    &:hover {
+      transform: rotate(0deg);
+    }
+
+    &:hover a:not(:hover) {
+      opacity: 0.8;
+      filter: blur(1px);
+    }
   }
 }
 
 section.about {
   position: relative;
-  transform: rotate(-2deg);
+  transform: rotate(-1deg);
   flex-direction: column;
   border: 2px solid var(--text-color);
   border-radius: var(--normal-border-radius);
   /* TODO: shadow */
   box-shadow: 1px 1px 1px 1px var(--text-color);
+
+  &:hover {
+    transform: rotate(0deg);
+  }
 }
 
 section {
@@ -222,6 +238,10 @@ article {
   display: flex;
   flex-direction: column;
   gap: var(--small-gap);
+
+  & header {
+    transform: rotate(-1deg);
+  }
 
   & footer {
     display: flex;
@@ -286,6 +306,8 @@ body {
   flex-direction: column;
   width: 100dvw;
   min-height: 100dvh;
+  line-height: 1.5;
+  letter-spacing: 0ch;
   color: var(--text-color);
   background-color: var(--background-color);
   font-family:
@@ -344,7 +366,10 @@ code {
 div.content {
   white-space: break-spaces;
   word-break: break-word;
-  line-height: 1.5;
+
+  & * {
+    margin: var(--small-gap) 0rem;
+  }
 }
 
 @font-face {
@@ -362,6 +387,28 @@ div.content {
 
 @font-face {
   font-family: "Monaspace Xenon";
+  font-weight: 400;
   font-style: normal;
-  src: url("/fonts/MonaspaceXenon-Regular.woff") format("woff");
+  src: url("/fonts/MonaspaceXenon-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Monaspace Xenon";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/MonaspaceXenon-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Monaspace Xenon";
+  font-weight: 400;
+  font-style: italic;
+  src: url("/fonts/MonaspaceXenon-Itallic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Monaspace Xenon";
+  font-weight: 700;
+  font-style: italic;
+  src: url("/fonts/MonaspaceXenon-BoldItallic.woff") format("woff");
 }
