@@ -2,7 +2,6 @@
 <article>
   <header>
     <h1>{{ .Title }}</h1>
-    <p>{{ .Summary }}</p>
     <small class="post-metadata">
       {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }} {{
       $dateHuman := .Date | time.Format "Jan 2, 2006" }}
@@ -13,6 +12,13 @@
     </small>
   </header>
   <div class="content">{{ .Content }}</div>
-  <footer>{{ partial "tags.html" (dict "taxonomy" "tags" "page" .) }}</footer>
+  {{ partial "tags.html" (dict "taxonomy" "tags" "page" .) }}
+  <footer>
+    {{ if .Prev }} {{ with .Prev }}
+    <a href="{{ .RelPermalink }}">《 {{ .Title | truncate 10 }}</a>
+    {{ end }} {{ end }} {{ if .Next }} {{ with .Next }}
+    <a href="{{ .RelPermalink }}">{{ .Title | truncate 10 }} 》 </a>
+    {{end }} {{ end }}
+  </footer>
 </article>
 {{ end }}
