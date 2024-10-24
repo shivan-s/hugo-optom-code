@@ -15,10 +15,10 @@
   {{ partial "tags.html" (dict "taxonomy" "tags" "page" .) }}
   <footer>
     {{ if .Prev }} {{ with .Prev }}
-    <a href="{{ .RelPermalink }}">《 {{ .Title | truncate 10 }}</a>
-    {{ end }} {{ end }} {{ if .Next }} {{ with .Next }}
-    <a href="{{ .RelPermalink }}">{{ .Title | truncate 10 }} 》 </a>
-    {{end }} {{ end }}
+    <a rel="prev" href="{{ .RelPermalink }}">《 {{ .Title }}</a>
+    {{ end }} {{ else }} <span /> {{ end }} {{ if .Next }} {{ with .Next }}
+    <a rel="next" href="{{ .RelPermalink }}">{{ .Title }} 》 </a>
+    {{ end }} {{ else }} {{ end }}
   </footer>
 </article>
 {{ end }}

@@ -227,9 +227,21 @@ article {
   }
 
   & footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    & a[rel="prev"] {
+      text-align: start;
+    }
+
+    & a[rel="next"] {
+      text-align: end;
+    }
+
+    &:hover a:not(:hover) {
+      opacity: 0.8;
+      filter: blur(1px);
+    }
   }
 }
 
