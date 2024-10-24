@@ -18,8 +18,8 @@
     --primary-color: hsla(195, 100%, 75.1%, 1);
     /* #ff9b33; */
     --alternative-color: hsla(31, 100%, 60%, 1);
-    /* #e3e3e3 */
-    --text-color: hsla(0, 0%, 89%, 1);
+    /* #d9d7ce */
+    --text-color: hsla(47, 12%, 83%, 1);
     /* #bababa */
     --support-color: hsla(0, 0%, 73%, 1);
     /* #222222 */
@@ -191,29 +191,6 @@ section {
   }
 }
 
-section.posts {
-  & .page-groupby {
-    width: 100%;
-
-    &:nth-child(odd) {
-      transform: rotate(-1deg);
-    }
-
-    &:nth-child(even) {
-      transform: rotate(1deg);
-    }
-
-    &:hover {
-      transform: rotate(0deg);
-    }
-
-    &:hover a:not(:hover) {
-      opacity: 0.8;
-      filter: blur(1px);
-    }
-  }
-}
-
 section.about {
   position: relative;
   transform: rotate(-1deg);
@@ -240,20 +217,49 @@ article {
   gap: var(--small-gap);
 
   & header {
-    transform: rotate(-1deg);
+    & h1 {
+      transform: rotate(-1deg);
+
+      &:hover {
+        transform: rotate(0deg);
+      }
+    }
   }
 
   & footer {
-    display: flex;
-    justify-content: start;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    & a[rel="prev"] {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: start;
+    }
+
+    & a[rel="next"] {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: end;
+    }
+
+    &:hover a:not(:hover) {
+      opacity: 0.8;
+      filter: blur(1px);
+    }
   }
 }
 
 div.page-groupby {
   display: flex;
+  width: 100%;
   gap: var(--large-gap);
   border-top: 1px dotted var(--text-color);
   padding: var(--small-gap) 0;
+
+  &:hover a:not(:hover) {
+    opacity: 0.8;
+    filter: blur(1px);
+  }
 
   & ul {
     width: 100%;
@@ -357,6 +363,12 @@ body>footer {
 pre:has(code) {
   border-radius: calc(var(--normal-border-radius) * 2);
   padding: calc(var(--small-gap)) calc(var(--small-gap) / 2);
+  box-shadow: 0px 0px 2pt var(--text-color);
+  transform: rotate(-1deg);
+
+  &:hover {
+    transform: rotate(0deg);
+  }
 }
 
 code {
