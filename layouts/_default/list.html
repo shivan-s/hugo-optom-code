@@ -4,7 +4,7 @@
 </header>
 
 {{ range .Pages.GroupByPublishDate "2006" }}
-<div class="page-groupby">
+<div class="posts-groupby">
   <h3>{{ .Key }}</h3>
   <ul>
     {{ range .Pages }} {{ with .GetTerms "tags" }}
