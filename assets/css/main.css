@@ -231,10 +231,14 @@ article {
     grid-template-columns: repeat(2, 1fr);
 
     & a[rel="prev"] {
+      overflow: hidden;
+      text-overflow: ellipsis;
       text-align: start;
     }
 
     & a[rel="next"] {
+      overflow: hidden;
+      text-overflow: ellipsis;
       text-align: end;
     }
 
