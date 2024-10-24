@@ -1,0 +1,44 @@
+---
+baseURL: https://example.org/
+languageCode: en-US
+title: My New Hugo Site
+
+params:
+  author:
+    email: author@email.com
+    name: Author name
+  about:
+    image: image.webp
+  githubRepo: "http://github.com/shivan-s/shivan.xyz"
+
+menus:
+  main:
+    - name: About
+      pageRef: /about
+      weight: 10
+    - name: Posts
+      pageRef: /posts
+      weight: 20
+    - name: Projects
+      pageRef: /projects
+      weight: 30
+
+module:
+  hugoVersion:
+    extended: false
+    min: "0.116.0"
+
+pagination:
+  disableAliases: false
+  pagerSize: 10
+  path: page
+
+markup:
+  highlight:
+    style: catppuccin-mocha
+
+enableGitInfo: true
+
+taxonomies:
+  category: categories
+  tag: tags

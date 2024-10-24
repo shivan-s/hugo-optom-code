@@ -1,18 +1,26 @@
-{{ partial "header.html" . }}
+{{ define "main" }}
+<header>
+  <h2>{{ .Title }}</h2>
+</header>
 
-<h1>{{ .Title }}</h1>
-
-{{ .Content }}
-
-{{ range.Data.Pages }}
-<article class="post-snippet">
-  <h3>
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-  </h3>
-	<time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
-		{{ .Date.Format "January 2, 2006" }}
-	</time>
-</article>
-{{ end }}
-
-{{ partial "footer.html" . }}
+{{ range .Pages.GroupByPublishDate "2006" }}
+<div class="posts-groupby">
+  <h3>{{ .Key }}</h3>
+  <ul>
+    {{ range .Pages }} {{ with .GetTerms "tags" }}
+    <p>Tags</p>
+    <ul>
+      {{ range . }}
+      <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+      {{ end }}
+    </ul>
+    {{ end }}
+    <li>
+      <a href="{{ .RelPermalink }}"><span>{{ .LinkTitle }}<span>{{ . }}</span></span>
+        <small class="post-metadata">{{ partial "time.html" . }}<span title="{{ .WordCount }} words">
+            {{ .ReadingTime }} min</span></small></a>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }} {{ end }}

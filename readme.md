@@ -1,20 +1,20 @@
-# Hugo Starter Theme
+<div align="center">
+    <h1>Optom Code (WIP) 🚧</h1>
+</div>
 
-Dead-simple Hugo theme with everything you need to get started. Intended to be a starter for creating your own theme without including useless bloat like most Hugo themes.
+[![Build](https://github.com/shivan-s/hugo-optom-code/actions/workflows/build.yml/badge.svg)](https://github.com/shivan-s/hugo-optom-code/actions/workflows/build.yml)
 
-## Getting started
+A theme for [Hugo](https://gohugo.io/).
 
-Inside your project folder, copy the theme to your `themes` folder. Since you're just using it as a starter for your theme, remove the git history.
+## Installation & Updating
 
-```bash
-git clone https://github.com/ericmurphyxyz/hugo-starter-theme themes/your-theme-name
-rm -rf themes/your-theme-name/.git
-```
-
-If you'd like some example content and an example config file to get started, you can copy the `exampleSite` directory into your root Hugo directory.
+Installation into you hugo site:
 
 ```bash
-cp -r themes/your-theme-name/exampleSite/* ./
+git submodule add --depth=1 git@github.com:shivan-s/hugo-optom-code.git themes/optom-code
+git submodule update --init --recursive
 ```
 
-To learn more about building themes in Hugo, refer to Hugo's [templating documentation](https://gohugo.io/templates/).
+## Acknowledgements
+
+Inspiration from [Papermod](https://github.com/adityatelange/hugo-PaperMod).
