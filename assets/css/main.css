@@ -249,7 +249,7 @@ article {
   }
 }
 
-div.page-groupby {
+div.posts-groupby {
   display: flex;
   width: 100%;
   gap: var(--large-gap);
@@ -275,7 +275,6 @@ div.page-groupby {
         gap: var(--small-gap);
 
         & span.post-title {
-          white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
         }
@@ -364,11 +363,7 @@ pre:has(code) {
   border-radius: calc(var(--normal-border-radius) * 2);
   padding: calc(var(--small-gap)) calc(var(--small-gap) / 2);
   box-shadow: 0px 0px 2pt var(--text-color);
-  transform: rotate(-1deg);
-
-  &:hover {
-    transform: rotate(0deg);
-  }
+  overflow-x: scroll;
 }
 
 code {
@@ -415,12 +410,12 @@ div.content {
   font-family: "Monaspace Xenon";
   font-weight: 400;
   font-style: italic;
-  src: url("/fonts/MonaspaceXenon-Itallic.woff") format("woff");
+  src: url("/fonts/MonaspaceXenon-Italic.woff") format("woff");
 }
 
 @font-face {
   font-family: "Monaspace Xenon";
   font-weight: 700;
   font-style: italic;
-  src: url("/fonts/MonaspaceXenon-BoldItallic.woff") format("woff");
+  src: url("/fonts/MonaspaceXenon-BoldItalic.woff") format("woff");
 }
