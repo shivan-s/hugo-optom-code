@@ -16,29 +16,7 @@
   <header>
     <h2>Posts</h2>
   </header>
-  {{ $pages := where site.RegularPages "Type" "posts" }} {{ range
-  $pages.GroupByPublishDate "2006" }}
-  <div class="posts-groupby">
-    <h3>{{ .Key }}</h3>
-    <ul>
-      {{ range .Pages }}
-      <li>
-        <a href="{{ .RelPermalink }}"><span title={{ .LinkTitle }} class="post-title">{{ if .Draft }}<em
-              title="Draft post">[D]&nbsp;</em>{{
-            end }}{{
-            .LinkTitle | truncate 128 }}</span>
-          <small class="post-metadata">
-            {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00"
-            }} {{ $dateHuman := .Date | time.Format "2 Jan" }}
-            <span title={{ .Date | time.Format "January 2, 2006" }}><time datetime="{{ $dateMachine }}">{{ $dateHuman
-                }}</time></span>
-            <span title="{{ .WordCount }} words">
-              {{ .ReadingTime }} min</span></small></a>
-      </li>
-      {{ end }}
-    </ul>
-  </div>
-  {{ end }}
+  {{ partial "posts-list.html" . }}
   <footer />
 </section>
 {{ end }}
