@@ -3,24 +3,4 @@
   <h2>{{ .Title }}</h2>
 </header>
 
-{{ range .Pages.GroupByPublishDate "2006" }}
-<div class="posts-groupby">
-  <h3>{{ .Key }}</h3>
-  <ul>
-    {{ range .Pages }} {{ with .GetTerms "tags" }}
-    <p>Tags</p>
-    <ul>
-      {{ range . }}
-      <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-      {{ end }}
-    </ul>
-    {{ end }}
-    <li>
-      <a href="{{ .RelPermalink }}"><span>{{ .LinkTitle }}<span>{{ . }}</span></span>
-        <small class="post-metadata">{{ partial "time.html" . }}<span title="{{ .WordCount }} words">
-            {{ .ReadingTime }} min</span></small></a>
-    </li>
-    {{ end }}
-  </ul>
-</div>
-{{ end }} {{ end }}
+{{ partial "posts-list.html" . }} {{ end }}
