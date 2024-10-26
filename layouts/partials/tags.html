@@ -4,11 +4,9 @@
   $taxonomy
 }}
   {{- $label := (index . 0).Parent.LinkTitle }}
-  <div class="tags">
-    <ul>
-      {{- range . }}
-        <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-      {{- end }}
-    </ul>
-  </div>
+  <ul>
+    {{- range . }}
+      <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+    {{- end }}
+  </ul>
 {{- end }}
