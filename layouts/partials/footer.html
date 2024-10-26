@@ -1,16 +1,20 @@
-<p>
-  Made with <span title="Love">💗</span> by
-  <a
-    title="{{ .Site.Params.author.email }}"
-    href="mailto:{{ .Site.Params.author.email }}"
-    >{{ .Site.Params.author.name }}</a
-  >
-</p>
-<p>
-  <span title="Powered">⚡</span> by
-  <a title="Hugo" href="https://gohugo.io">Hugo</a> in
-  <time datetime="{{ dateFormat "2006" now }}"
-    >{{ dateFormat "2006" now }}</time
-  >
-</p>
-<p><a title="Back to top" href="#top">Back to Top</a></p>
+<div>
+  <p>
+    Made with <span title="Love">💗</span> by
+    <a
+      title="{{ .Site.Params.author.email }}"
+      href="mailto:{{ .Site.Params.author.email }}"
+      >{{ .Site.Params.author.name }}</a
+    >
+  </p>
+  <p>
+    <span title="Powered">⚡</span> by
+    <a title="Hugo" href="https://gohugo.io">Hugo</a> in
+    <time datetime="{{ dateFormat " 2006" now }}"
+      >{{ dateFormat "2006" now }}</time
+    >
+  </p>
+  <p>
+    <a title="Back to top" href="#top">Back to Top</a>
+  </p>
+</div>
