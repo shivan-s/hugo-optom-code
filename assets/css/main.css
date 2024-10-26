@@ -363,11 +363,12 @@ body > footer {
 }
 
 div.content {
-  white-space: break-spaces;
   word-break: break-word;
 
-  & p {
-    margin: var(--small-gap) 0rem;
+  & p,
+  div.highlight,
+  img {
+    margin: var(--normal-gap) 0rem;
   }
 
   & ul ol {
