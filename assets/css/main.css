@@ -111,7 +111,7 @@ h3 {
   color: var(--primary-color);
 }
 
-body>header {
+body > header {
   font-family:
     Optician Sans,
     sans-serif;
@@ -149,7 +149,7 @@ div.tags {
       outline: 2px ridge var(--text-color);
       filter: none;
       border-radius: var(--large-border-radius);
-      box-shadow: 0 0 0 2pt var(--text-color);
+      box-shadow: 0 0 0 2px var(--text-color);
     }
 
     & li {
@@ -336,8 +336,9 @@ main {
 }
 
 /* footer */
-body>footer {
-  padding: 1rem 0rem;
+body > footer {
+  width: 100%;
+  padding: 1rem 0;
   margin-top: 1rem;
   border-top: 1px solid var(--text-color);
   font-family:
@@ -351,9 +352,13 @@ body>footer {
     text-align: center;
   }
 
-  & p:not(:last-child)::after {
-    padding: 0 calc(var(--letter-gap) / 2);
-    content: "·";
+  & div {
+    max-width: 75ch;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: calc(var(--letter-gap) / 2);
   }
 }
 
@@ -361,7 +366,7 @@ div.content {
   white-space: break-spaces;
   word-break: break-word;
 
-  & * {
+  & p {
     margin: var(--small-gap) 0rem;
   }
 
@@ -370,14 +375,27 @@ div.content {
   }
 
   & pre:has(code) {
+    max-width: 100%;
     border-radius: calc(var(--normal-border-radius) * 2);
     padding: calc(var(--small-gap)) calc(var(--small-gap) / 2);
-    box-shadow: 0px 0px 2pt var(--text-color);
+    box-shadow: 0px 0px 2px var(--text-color);
     overflow-x: scroll;
   }
 
   & code {
     font-family: "Monaspace Radon";
+  }
+
+  & img {
+    max-width: 100%;
+    max-height: 90dvh;
+    object-fit: contain;
+    border-radius: var(--normal-border-radius);
+    box-shadow: 0 0 0 2px var(--text-color);
+
+    &:hover {
+      border-radius: 0;
+    }
   }
 }
 

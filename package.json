@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "prettier": "3.3.3",
+    "prettier-plugin-go-template": "^0.0.15"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "scripts": {
+    "prepare": "husky"
+  }
+}
