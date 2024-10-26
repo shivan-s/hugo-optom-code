@@ -291,10 +291,15 @@ div.posts-groupby {
 
 small.post-metadata {
   display: flex;
+  flex-wrap: wrap;
 
   & span {
     white-space: nowrap;
     overflow: hidden;
+
+    &#suggest {
+      text-overflow: ellipsis;
+    }
   }
 
   & span:not(:last-child)::after {
@@ -385,6 +390,7 @@ div.content {
 
   & code {
     font-family: "Monaspace Radon";
+    border-radius: var(--normal-border-radius);
   }
 
   & img {

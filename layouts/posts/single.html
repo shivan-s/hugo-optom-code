@@ -8,7 +8,9 @@
         <span><time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></span>
         <span title="{{ .WordCount }} words">{{ .ReadingTime }} min</span>
         <span>{{ .Params.author }}</span>
-        <span><a href="{{ .Params.githubRepo }}">Suggest Changes</a></span>
+        <span id="suggest"
+          ><a href="{{ .Params.githubRepo }}">Suggest Changes</a></span
+        >
       </small>
     </header>
     <div class="content">{{ .Content }}</div>
