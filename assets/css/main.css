@@ -64,18 +64,6 @@ h6 {
   padding: 0;
 }
 
-img {
-  max-width: 100%;
-  max-height: 50dvh;
-  object-fit: contain;
-  border-radius: var(--normal-border-radius);
-  box-shadow: 0 0 0 2px var(--text-color);
-
-  &:hover {
-    border-radius: none;
-  }
-}
-
 p {
   font-size: var(--normal-size);
 }
@@ -123,7 +111,7 @@ h3 {
   color: var(--primary-color);
 }
 
-body>header {
+body > header {
   font-family:
     Optician Sans,
     sans-serif;
@@ -348,7 +336,7 @@ main {
 }
 
 /* footer */
-body>footer {
+body > footer {
   padding: 1rem 0rem;
   margin-top: 1rem;
   border-top: 1px solid var(--text-color);
@@ -390,6 +378,18 @@ div.content {
 
   & code {
     font-family: "Monaspace Radon";
+  }
+
+  & img {
+    max-width: 100%;
+    max-height: 50dvh;
+    object-fit: contain;
+    border-radius: var(--normal-border-radius);
+    box-shadow: 0 0 0 2px var(--text-color);
+
+    &:hover {
+      border-radius: none;
+    }
   }
 }
 
