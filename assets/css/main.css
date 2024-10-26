@@ -64,6 +64,18 @@ h6 {
   padding: 0;
 }
 
+img {
+  max-width: 100%;
+  max-height: 50dvh;
+  object-fit: contain;
+  border-radius: var(--normal-border-radius);
+  box-shadow: 0 0 0 2px var(--text-color);
+
+  &:hover {
+    border-radius: none;
+  }
+}
+
 p {
   font-size: var(--normal-size);
 }
@@ -149,7 +161,7 @@ div.tags {
       outline: 2px ridge var(--text-color);
       filter: none;
       border-radius: var(--large-border-radius);
-      box-shadow: 0 0 0 2pt var(--text-color);
+      box-shadow: 0 0 0 2px var(--text-color);
     }
 
     & li {
@@ -372,7 +384,7 @@ div.content {
   & pre:has(code) {
     border-radius: calc(var(--normal-border-radius) * 2);
     padding: calc(var(--small-gap)) calc(var(--small-gap) / 2);
-    box-shadow: 0px 0px 2pt var(--text-color);
+    box-shadow: 0px 0px 2px var(--text-color);
     overflow-x: scroll;
   }
 
