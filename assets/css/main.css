@@ -44,15 +44,25 @@
   --large-border-radius: 4rem;
 }
 
+:target {
+  transition: all 0.3s 1s fade-in-out;
+  transform: rotate(-2deg);
+  max-width: fit-content;
+  margin: calc(var(--normal-gap) * 2) 0;
+  outline: 2px dotted var(--text-color);
+}
+
 html {
   scroll-padding: 1rem;
   scroll-behavior: smooth;
 }
 
 p,
+figure,
 small,
 em,
 strong,
+ol,
 ul,
 h1,
 h2,
@@ -74,13 +84,10 @@ small {
   line-height: normal;
 }
 
-* {
-  transition: all 0.3s ease-in-out;
-}
-
 a {
   color: var(--primary-color);
   text-decoration: underline dotted;
+  transition: all 0.3s ease-in-out;
 }
 
 a:hover {
@@ -103,12 +110,8 @@ h3 {
   font-family:
     Optician Sans,
     sans-serif;
-}
-
-h1,
-h2,
-h3 {
   color: var(--primary-color);
+  transition: all 0.3s ease-in-out;
 }
 
 body > header {
@@ -144,6 +147,7 @@ div.tags {
     display: flex;
     flex-wrap: wrap;
     gap: var(--small-gap);
+    transition: all 0.3s ease-in-out;
 
     & a:hover {
       outline: 2px ridge var(--text-color);
@@ -203,6 +207,7 @@ section.about {
   border: 2px solid var(--text-color);
   border-radius: var(--normal-border-radius);
   box-shadow: 0px 0px 0px 2pt var(--text-color);
+  transition: all 0.3s ease-in-out;
 
   &:hover {
     transform: rotate(0deg);
@@ -213,6 +218,7 @@ article {
   display: flex;
   flex-direction: column;
   gap: var(--small-gap);
+  transition: all 0.3s ease-in-out;
 
   & header {
     & h1 {
@@ -371,9 +377,16 @@ div.content {
   word-break: break-word;
 
   & p,
+  ul,
+  ol,
   div.highlight,
   img {
     margin: var(--normal-gap) 0rem;
+  }
+
+  & p ~ ul,
+  p ~ ol {
+    margin-bottom: none;
   }
 
   & ul ol {
@@ -385,7 +398,7 @@ div.content {
     border-radius: calc(var(--normal-border-radius) * 2);
     padding: calc(var(--small-gap)) calc(var(--small-gap) / 2);
     box-shadow: 0px 0px 2px var(--text-color);
-    overflow-x: scroll;
+    overflow-x: auto;
   }
 
   & code {
@@ -399,10 +412,37 @@ div.content {
     object-fit: contain;
     border-radius: var(--normal-border-radius);
     box-shadow: 0 0 0 2px var(--text-color);
+    transition: all 0.3s ease-in-out;
 
     &:hover {
       border-radius: 0;
     }
+  }
+}
+
+figure:has(img) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--small-gap);
+  margin: var(--normal-gap) 0rem;
+
+  & img {
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: var(--normal-border-radius);
+    box-shadow: 0 0 0 2px var(--text-color);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      border-radius: 0;
+    }
+  }
+
+  & figcaption {
+    font-size: var(--small-size);
+    color: var(--support-color);
   }
 }
 

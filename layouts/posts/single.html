@@ -5,16 +5,38 @@
       <small class="post-metadata">
         {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
         {{ $dateHuman := .Date | time.Format "Jan 2, 2006" }}
-        <span><time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></span>
+        <span
+          title="Last modified: {{ .Lastmod | time.Format " Jan 2, 2006 15:04 UTC" }}"
+          ><time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></span
+        >
         <span title="{{ .WordCount }} words">{{ .ReadingTime }} min</span>
         <span>{{ .Params.author }}</span>
         <span id="suggest"
           ><a href="{{ .Params.githubRepo }}">Suggest Changes</a></span
         >
       </small>
+      {{ if not (.Param "cover.hidden") }}
+        {{ $src := (.Param "cover.image") | default "" }}
+        {{ $alt := (.Param "cover.alt") | default "" }}
+        {{ $caption := (.Param "cover.caption") | default false }}
+        <figure>
+          <img src="{{ $src }}" alt="{{ $alt }}" />
+          {{ if $caption }}
+            <figcaption>{{ $caption | markdownify }}</figcaption>
+          {{ end }}
+        </figure>
+      {{ end }}
     </header>
+    <aside>
+      <details>
+        <summary>Table of Contents</summary>
+        {{ .TableOfContents }}
+      </details>
+    </aside>
     <div class="content">{{ .Content }}</div>
-    {{ partial "tags.html" (dict "taxonomy" "tags" "page" .) }}
+    <aside>
+      {{ partial "tags.html" (dict "taxonomy" "tags" "page" .) }}
+    </aside>
     <footer>
       {{ if .Prev }}
         {{ with .Prev }}
@@ -28,6 +50,7 @@
           <a rel="next" href="{{ .RelPermalink }}">{{ .Title }} 》 </a>
         {{ end }}
       {{ else }}
+        <span />
       {{ end }}
     </footer>
   </article>
