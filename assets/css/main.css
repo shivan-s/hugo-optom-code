@@ -61,6 +61,8 @@ p,
 figure,
 small,
 em,
+ol,
+ul,
 strong,
 h1,
 h2,
@@ -70,11 +72,6 @@ h5,
 h6 {
   margin: 0;
   padding: 0;
-}
-
-ol,
-ul {
-  list-style-position: inside;
 }
 
 p {
@@ -379,6 +376,14 @@ body > footer {
   }
 }
 
+details.table-of-contents {
+  & ol,
+  ul {
+    padding-left: var(--small-gap);
+    list-style-position: inside;
+  }
+}
+
 div.content {
   word-break: break-word;
 
@@ -402,6 +407,7 @@ div.content {
 
   & ul ol {
     list-style-position: inline;
+    padding-left: var(--small-gap);
   }
 
   & pre:has(code) {
