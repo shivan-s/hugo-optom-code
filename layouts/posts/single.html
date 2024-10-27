@@ -34,9 +34,11 @@
       </details>
     </aside>
     <div class="content">{{ .Content }}</div>
-    <aside>
+    <hr />
+    <aside class="tags">
       {{ partial "tags.html" (dict "taxonomy" "tags" "page" .) }}
     </aside>
+    <hr />
     <footer>
       {{ if .Prev }}
         {{ with .Prev }}

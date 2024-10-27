@@ -62,8 +62,6 @@ figure,
 small,
 em,
 strong,
-ol,
-ul,
 h1,
 h2,
 h3,
@@ -72,6 +70,11 @@ h5,
 h6 {
   margin: 0;
   padding: 0;
+}
+
+ol,
+ul {
+  list-style-position: inside;
 }
 
 p {
@@ -137,7 +140,7 @@ body > header {
   }
 }
 
-div.tags {
+aside.tags {
   font-family:
     Optician Sans,
     sans-serif;
@@ -333,6 +336,10 @@ body {
     serif;
 }
 
+hr {
+  width: 100%;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -381,6 +388,11 @@ div.content {
   div.highlight,
   img {
     margin: var(--normal-gap) 0rem;
+  }
+
+  & blockquote {
+    border-left: 2px solid var(--text-color);
+    padding-left: var(--normal-gap);
   }
 
   & p ~ ul,
