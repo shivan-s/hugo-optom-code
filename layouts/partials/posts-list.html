@@ -13,14 +13,12 @@
             >
             <small class="post-metadata">
               {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-              {{ $dateHuman := .Date | time.Format "2 Jan" }}
-              <span title="{{ .Date | time.Format "January 2, 2006" }}"
+              {{ $dateHumanSmall := .Date | time.Format "2 Jan" }}
+              {{ $dateHumanLarge := .Date | time.Format "January 2, 2006" }}
+              <span title="{{ $dateHumanLarge }}"
                 ><time datetime="{{ $dateMachine }}"
-                  >{{ $dateHuman }}</time
+                  >{{ $dateHumanSmall }}</time
                 ></span
-              >
-              <span title="{{ .WordCount }} words">
-                {{ .ReadingTime }} min</span
               ></small
             ></a
           >
