@@ -318,7 +318,6 @@ body {
   display: flex;
   margin: 0;
   flex-direction: column;
-  width: 100dvw;
   min-height: 100dvh;
   line-height: 1.5;
   letter-spacing: 0ch;
