@@ -430,7 +430,7 @@ div.content {
   }
 }
 
-figure:has(img) {
+figure:has(img, audio) {
   display: flex;
   flex-direction: column;
   justify-content: center;

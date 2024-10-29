@@ -28,11 +28,9 @@
       {{ end }}
       {{ if not (.Param "audio.hidden" | default true) }}
         {{ $src := (.Param "audio.src") | default "" }}
-        {{ $caption := (.Param "audio.caption") | default false }}
+        {{ $caption := (.Param "audio.caption") | default "Listen to audio version" }}
         <figure>
-          {{ if $caption }}
-            <figcaption>{{ $caption }}</figcaption>
-          {{ end }}
+          <figcaption>{{ $caption }}</figcaption>
           <audio controls src="{{ $src }}"></audio>
         </figure>
       {{ end }}
