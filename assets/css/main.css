@@ -323,14 +323,7 @@ body {
   letter-spacing: 0ch;
   color: var(--text-color);
   background-color: var(--background-color);
-  font-family:
-    Monaspace Xenon,
-    Cambria,
-    Cochin,
-    Georgia,
-    Times,
-    "Times New Roman",
-    serif;
+  font-family: Domine, Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 hr {
@@ -477,29 +470,6 @@ figure:has(img) {
 }
 
 @font-face {
-  font-family: "Monaspace Xenon";
-  font-weight: 400;
-  font-style: normal;
-  src: url("/fonts/MonaspaceXenon-Light.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Monaspace Xenon";
-  font-style: normal;
-  font-weight: 700;
-  src: url("/fonts/MonaspaceXenon-Bold.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Monaspace Xenon";
-  font-weight: 400;
-  font-style: italic;
-  src: url("/fonts/MonaspaceXenon-Italic.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Monaspace Xenon";
-  font-weight: 700;
-  font-style: italic;
-  src: url("/fonts/MonaspaceXenon-BoldItalic.woff") format("woff");
+  font-family: "Domine";
+  src: url("/fonts/Domine-VariableFont_wght.woff") format("woff");
 }
