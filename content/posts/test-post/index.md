@@ -14,7 +14,7 @@ cover:
 audio:
   src: audio.mp3
   caption: caption
-  hidden: true
+  hidden: false
 ---
 
 Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.

@@ -400,7 +400,7 @@ div.content {
 
   & ul ol {
     list-style-position: inline;
-    padding-left: var(--small-gap);
+    padding-left: var(--normal-gap);
   }
 
   & pre:has(code) {
@@ -430,7 +430,7 @@ div.content {
   }
 }
 
-figure:has(img) {
+figure:has(img, audio) {
   display: flex;
   flex-direction: column;
   justify-content: center;
