@@ -119,6 +119,10 @@ body > header {
     Optician Sans,
     sans-serif;
 
+  & img {
+    border-radius: var(--normal-border-radius);
+  }
+
   & nav {
     padding: 1rem 0;
     display: flex;
@@ -400,7 +404,10 @@ div.content {
 
   & ul ol {
     list-style-position: inline;
-    padding-left: var(--normal-gap);
+
+    li {
+      padding-left: var(--normal-gap);
+    }
   }
 
   & pre:has(code) {
