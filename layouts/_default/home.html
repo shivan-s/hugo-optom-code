@@ -7,7 +7,7 @@
           <h2>About</h2>
         </a>
       </header>
-      <p>{{ truncate 256 .Content }}</p>
+      <div class="content">{{ truncate 256 .Content }}</div>
       <footer>
         <a href="{{ .RelPermalink }}">Read more...</a>
       </footer>

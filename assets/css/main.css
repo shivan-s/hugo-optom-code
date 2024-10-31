@@ -397,16 +397,16 @@ div.content {
     padding-left: var(--normal-gap);
   }
 
-  & p ~ ul,
-  p ~ ol {
-    margin-bottom: none;
-  }
+  & ul,
+  ol {
+    list-style-position: inside;
 
-  & ul ol {
-    list-style-position: inline;
-
-    li {
+    & li {
       padding-left: var(--normal-gap);
+
+      & p {
+        display: inline;
+      }
     }
   }
 
