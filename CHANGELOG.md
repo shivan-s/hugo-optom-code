@@ -1,3 +1,9 @@
+## 0.2.1 (2024-10-31)
+
+### Fix
+
+- issue with indentation of lists
+
 ## 0.2.0 (2024-10-27)
 
 ### Feat
