@@ -379,6 +379,10 @@ details.table-of-contents {
     padding-left: var(--small-gap);
     list-style-position: inside;
   }
+
+  &:has(nav:empty) {
+    display: none;
+  }
 }
 
 div.content {
