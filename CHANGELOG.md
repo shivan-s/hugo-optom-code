@@ -1,3 +1,9 @@
+## 0.2.2 (2024-11-08)
+
+### Fix
+
+- fixing empty table of contents (#43)
+
 ## 0.2.1 (2024-10-31)
 
 ### Fix
