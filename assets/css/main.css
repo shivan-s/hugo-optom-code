@@ -1,29 +1,36 @@
 /* Global Styling */
 
 :root {
-  /* Colors */
   /* #196680 */
-  --primary-color: hsla(195, 67.3%, 30%, 1);
+  --primary-color: hsl(195deg 67.3% 30% / 100%);
+
   /* #ff9b33 */
-  --alternative-color: hsla(31, 100%, 60%, 1);
+  --alternative-color: hsl(31deg 100% 60% / 100%);
+
   /* #222222 */
-  --text-color: hsla(0, 0%, 13.3%, 1);
+  --text-color: hsl(0deg 0% 13.3% / 100%);
+
   /* #bababa */
-  --support-color: hsla(0, 0%, 73%, 1);
+  --support-color: hsl(0deg 0% 73% / 100%);
+
   /* #fefefe */
-  --background-color: hsla(0, 0%, 99.6%, 1);
+  --background-color: hsl(0deg 0% 99.6% / 100%);
 
   @media (prefers-color-scheme: dark) {
     /* #80dfff; */
-    --primary-color: hsla(195, 100%, 75.1%, 1);
+    --primary-color: hsl(195deg 100% 75.1% / 100%);
+
     /* #ff9b33; */
-    --alternative-color: hsla(31, 100%, 60%, 1);
+    --alternative-color: hsl(31deg 100% 60% / 100%);
+
     /* #d9d7ce */
-    --text-color: hsla(47, 12%, 83%, 1);
+    --text-color: hsl(47deg 12% 83% / 100%);
+
     /* #bababa */
-    --support-color: hsla(0, 0%, 73%, 1);
+    --support-color: hsl(0deg 0% 73% / 100%);
+
     /* #222222 */
-    --background-color: hsla(0, 0%, 13.3%, 1);
+    --background-color: hsl(0deg 0% 13.3% / 100%);
   }
 
   /* Spacing */
@@ -42,10 +49,12 @@
   /* Border */
   --normal-border-radius: 0.25rem;
   --large-border-radius: 4rem;
+
+  interpolate-size: allow-keywords;
 }
 
 :target {
-  transition: all 0.3s 1s fade-in-out;
+  transition: all 0.3s 1s ease-in-out;
   transform: rotate(-2deg);
   max-width: fit-content;
   margin: calc(var(--normal-gap) * 2) 0;
@@ -107,17 +116,13 @@ h2 {
 h1,
 h2,
 h3 {
-  font-family:
-    Optician Sans,
-    sans-serif;
+  font-family: "Optician Sans", sans-serif;
   color: var(--primary-color);
   transition: all 0.3s ease-in-out;
 }
 
 body > header {
-  font-family:
-    Optician Sans,
-    sans-serif;
+  font-family: "Optician Sans", sans-serif;
 
   & img {
     border-radius: var(--normal-border-radius);
@@ -133,7 +138,7 @@ body > header {
       font-size: var(--large-size);
     }
 
-    a {
+    & a {
       display: flex;
       align-items: center;
       gap: var(--letter-gap);
@@ -142,9 +147,7 @@ body > header {
 }
 
 aside.tags {
-  font-family:
-    Optician Sans,
-    sans-serif;
+  font-family: "Optician Sans", sans-serif;
 
   & ul {
     list-style: none;
@@ -210,7 +213,7 @@ section.about {
   flex-direction: column;
   border: 2px solid var(--text-color);
   border-radius: var(--normal-border-radius);
-  box-shadow: 0px 0px 0px 2pt var(--text-color);
+  box-shadow: 0 0 0 2px var(--text-color);
   transition: all 0.3s ease-in-out;
 
   &:hover {
@@ -324,10 +327,11 @@ body {
   flex-direction: column;
   min-height: 100dvh;
   line-height: 1.5;
-  letter-spacing: 0ch;
+  letter-spacing: 0;
   color: var(--text-color);
   background-color: var(--background-color);
-  font-family: Domine, Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family:
+    Domine, Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 hr {
@@ -352,9 +356,7 @@ body > footer {
   padding: 1rem 0;
   margin-top: 1rem;
   border-top: 1px solid var(--text-color);
-  font-family:
-    Optician Sans,
-    sans-serif;
+  font-family: "Optician Sans", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -373,15 +375,43 @@ body > footer {
   }
 }
 
-details.table-of-contents {
-  & ol,
-  ul {
-    padding-left: var(--small-gap);
-    list-style-position: inside;
-  }
+summary {
+  font-weight: 900;
+  cursor: pointer;
+}
 
-  &:has(nav:empty) {
-    display: none;
+details {
+  &.table-of-contents {
+    overflow: hidden;
+    transition-property: margin-block-end;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+
+    & ol,
+    ul {
+      padding-left: var(--small-gap);
+      list-style-position: inside;
+    }
+
+    &:has(nav:empty) {
+      display: none;
+    }
+
+    &::details-content {
+      transition-property: block-size, content-visibility, margin-block-end;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out;
+      transition-behavior: allow-discrete;
+      block-size: 0;
+    }
+
+    &[open]::details-content {
+      block-size: auto;
+    }
+
+    &[open] {
+      margin-block-end: 1rem;
+    }
   }
 }
 
@@ -393,7 +423,7 @@ div.content {
   ol,
   div.highlight,
   img {
-    margin: var(--normal-gap) 0rem;
+    margin: var(--normal-gap) 0;
   }
 
   & blockquote {
@@ -418,12 +448,12 @@ div.content {
     max-width: 100%;
     border-radius: calc(var(--normal-border-radius) * 2);
     padding: calc(var(--small-gap)) calc(var(--small-gap) / 2);
-    box-shadow: 0px 0px 2px var(--text-color);
+    box-shadow: 0 0 2px var(--text-color);
     overflow-x: auto;
   }
 
   & code {
-    font-family: "Monaspace Radon";
+    font-family: "Monaspace Radon", monospace;
     border-radius: var(--normal-border-radius);
   }
 
@@ -447,7 +477,7 @@ figure:has(img, audio) {
   justify-content: center;
   align-items: center;
   gap: var(--small-gap);
-  margin: var(--normal-gap) 0rem;
+  margin: var(--normal-gap) 0;
 
   & img {
     max-width: 100%;
@@ -481,6 +511,6 @@ figure:has(img, audio) {
 }
 
 @font-face {
-  font-family: "Domine";
+  font-family: Domine;
   src: url("/fonts/Domine-VariableFont_wght.woff") format("woff");
 }
