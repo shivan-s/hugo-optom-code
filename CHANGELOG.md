@@ -1,3 +1,9 @@
+## 0.3.0 (2025-06-28)
+
+### Feat
+
+- adds transition for table of contents (#51)
+
 ## 0.2.2 (2024-11-08)
 
 ### Fix
