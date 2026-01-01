@@ -1,3 +1,9 @@
+## 0.4.0 (2026-01-01)
+
+### Feat
+
+- update the table of contents (#53)
+
 ## 0.3.0 (2025-06-28)
 
 ### Feat
