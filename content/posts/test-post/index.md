@@ -19,7 +19,7 @@ audio:
 
 Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
 
-![Test page](./testing.jpg)
+{{<figure src="/testing.jpg" alt="Test Page" caption="This is a caption for the testing image!">}}
 
 ## Testing
 

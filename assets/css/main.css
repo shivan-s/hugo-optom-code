@@ -492,11 +492,8 @@ div.content {
 }
 
 figure:has(img, audio) {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: var(--small-gap);
+  display: grid;
+  place-content: center;
   margin: var(--normal-gap) 0;
 
   & img {
@@ -505,6 +502,7 @@ figure:has(img, audio) {
     border-radius: var(--normal-border-radius);
     box-shadow: 0 0 0 2px var(--text-color);
     transition: border-radius 0.3s ease-in-out;
+    margin: 0;
 
     &:hover {
       border-radius: 0;
@@ -512,6 +510,8 @@ figure:has(img, audio) {
   }
 
   & figcaption {
+    margin-block-start: -1rem;
+    margin-inline: auto;
     font-size: var(--small-size);
     color: var(--support-color);
   }
